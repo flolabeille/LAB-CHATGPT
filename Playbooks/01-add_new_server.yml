@@ -1,0 +1,8 @@
+---
+- name: 01-add_new_server.yml
+  become: true
+  become_user: root
+  gather_facts: true
+
+  roles:
+    - New-Server
