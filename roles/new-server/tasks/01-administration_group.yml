@@ -1,14 +1,4 @@
 ---
-- name : Ping the new server
-  ansible.builtin.ping:
-  register: ping_result
-  ignore_errors: true
-
-- name: Debug si ping échoue
-  ansible.builtin.debug:
-    msg: "erreur ping"
-  when: ping_result is failed
-
 - name: Create the group "{{ administrator_group_name }}" on target
   ansible.builtin.group:
     name: "{{ administrator_group_name }}"
