@@ -4,7 +4,7 @@
   become: true
   gather_facts: true
 
-  pre-tasks:
+  pre_tasks:
     - name : Ping the new server
       ansible.builtin.ping:
       register: ping_result
