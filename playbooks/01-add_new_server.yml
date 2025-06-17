@@ -4,5 +4,16 @@
   become: true
   gather_facts: true
 
+  pre-tasks:
+    - name : Ping the new server
+      ansible.builtin.ping:
+      register: ping_result
+      ignore_errors: true
+
+    - name: Debug si ping échoue
+      ansible.builtin.debug:
+        msg: "erreur ping"
+      when: ping_result is failed
+
   roles:
     - new-server
