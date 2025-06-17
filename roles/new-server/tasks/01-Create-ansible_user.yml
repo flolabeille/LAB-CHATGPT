@@ -12,6 +12,7 @@
 - name: Create admin group on target
   ansible.builtin.group:
     name: administrators
+    state: present
 
 - name: Create ansible_user on target
   ansible.builtin.user:
