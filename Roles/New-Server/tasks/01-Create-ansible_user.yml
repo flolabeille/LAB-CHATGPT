@@ -16,8 +16,8 @@
 
 - name: Create ansible_user on target
   ansible.builtin.user:
-    name: "{{create_ansible_user}}"
-    password: "{{create_ansible_password}}"
+    name: "{{ create_ansible_user }}"
+    password: "{{ create_ansible_password }}"
     shell: /bin/bash
     create_home: true
     groups:
