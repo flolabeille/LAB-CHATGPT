@@ -8,7 +8,7 @@
     - name : Ping the new server
       ansible.builtin.ping:
       register: ping_result
-      ignore_errors: true
+      ignore_errors: false
 
     - name: Debug si ping échoue
       ansible.builtin.debug:
