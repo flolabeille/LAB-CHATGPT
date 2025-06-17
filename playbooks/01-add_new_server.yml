@@ -3,6 +3,7 @@
   hosts: all
   become: true
   gather_facts: true
+  any_errors_fatal: false
 
   pre_tasks:
     - name : Ping the new server
@@ -13,6 +14,7 @@
     - name: Debug si ping échoue
       ansible.builtin.debug:
         msg: "erreur ping"
+      when: ping_result is failed
 
   roles:
     - new-server
